@@ -26,6 +26,7 @@ class c64display:
         self.display_surface.fill(self.foreground)
 
         pygame.draw.rect(self.display_surface, self.background, (self.margin,self.margin,self.width,self.height), 0)
+        pygame.display.update()
 
 
     def printChar(self,loc,chd):

@@ -22,7 +22,7 @@ python sbc.py --romImage rom/counter.bin --display 1024
 ```
 
 ## Assembler
-The files provied in this emulator has been assembled with [vasm|http://www.compilers.de/vasm.html].  If you couldn't be bothered, the assembler files (in asm) have been assembled as rom inages in the rom folder.
+The files provied in this emulator has been assembled with [vasm](http://www.compilers.de/vasm.html).  If you couldn't be bothered, the assembler files (in asm) have been assembled as rom inages in the rom folder.
 To assemble it yourself, download vasm, and run this command
 ```
 vasm6502_oldstyle.exe helloworld.asm -dotdir -Fbin
@@ -32,16 +32,16 @@ The assembled rom image will be saved as a.out
 ## Caveats
 Not everything is perfect.  Chances are that some 65c02 binaries won't run exactly as expected.  I'm welcome to get feedback and fix any bugs that may exist. Some issues I am aware of...
 
-[ ] - It is closer to a 6502, rather than 65c02.  I need to fix that up.  The idea is to have something that you can actually purchase and use, and sticking to the 6502 just doesn't cut it.
-[ ]  - The CPU clock is not implemented very well.  Where the actual 65c02 may take 4 or 5 clock cycles to do an instruction, my emulator does it all in one hit.  This may not really be an issue, except in applications that need certain actions to occur on a certain cycle.  There is a provision to handle this.  More on this later.
-[ ] - The display is more like a graphics card that does all the heavy lifting.  A C64 would refer to some ROM image to get the characters to be displayed.  This emulator simply uses a font.  The idea with this emulator is that there is a _screen card_ attached to the ROM that will render whatever is in memory onto the screen.
+* It is closer to a 6502, rather than 65c02.  I need to fix that up.  The idea is to have something that you can actually purchase and use, and sticking to the 6502 just doesn't cut it.
+* The CPU clock is not implemented very well.  Where the actual 65c02 may take 4 or 5 clock cycles to do an instruction, my emulator does it all in one hit.  This may not really be an issue, except in applications that need certain actions to occur on a certain cycle.  There is a provision to handle this.  More on this later.
+* The display is more like a graphics card that does all the heavy lifting.  A C64 would refer to some ROM image to get the characters to be displayed.  This emulator simply uses a font.  The idea with this emulator is that there is a _screen card_ attached to the ROM that will render whatever is in memory onto the screen.
 
 ## Todo list
 There is still some work to be done with this emulator, like :
 
-[ ] - Not all the 65c02 instructions are implemented yet.
-[ ] - There is no "keyboard" yet.  So any input is still getting ignored.
-[ ] - Add a few more command line options to sbc.py
+* Not all the 65c02 instructions are implemented yet.
+* There is no "keyboard" yet.  So any input is still getting ignored.
+* Add a few more command line options to sbc.py
 
 ## FAQ
 ### Can it run Commodore BASIC?

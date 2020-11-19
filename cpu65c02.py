@@ -659,7 +659,7 @@ class cpu65c02:
                     self.P['N'] = bool(self.Y & 0x80)
             
             if q['I'] == 'DEC':
-                _t = (_data - 1) & 0x00FF
+                _t = _value - 1
 
                 if q['A'] == 'ACC':
                     self.A = _t & 0x00FF
@@ -691,7 +691,7 @@ class cpu65c02:
                 _t = _value + 1
 
                 if q['A'] == 'ACC':
-                    self.A = _t
+                    self.A = _t & 0x00FF
                 else:
                     self.bus.write(_addr , _t & 0x00FF)
 
@@ -948,7 +948,7 @@ class cpu65c02:
                 'IMP' : [ ''  , ''    ],
                 'REL' : [ ''  , ''    ],
                 'STA' : [ ''  , ''    ],
-                'ZP0' : [ '(' , ',x) '],
+                'ZP0' : [ ''  , ''    ],
                 'IZX' : [ '(' , ',x)' ],
                 'ZPX' : [ ''  , ',x'  ],
                 'ZPY' : [ ''  , ',y'  ],
